@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Information Page</title>
+    <link rel="stylesheet" href="mainpage.css" />
+  </head>
+  <body>
+    <div class="headings">
+      <h1><i> ENTER DETAILS</i></h1>
+    </div>
+    <div class="forms">
+      <form action="index.html" target="_blank" id="mainForm">
+        <i>  Enter Name </i>
+        <input
+          type="text"
+          placeholder="Name"
+          name="anubhav"
+          value=""
+          id="username"
+          autocomplete="off"
+        />
+        <br />
+        <i>   Enter Age </i>
+        <input
+          type="number"
+          placeholder="Age"
+          id="userage"
+          autocomplete="false"
+        />
+        <br />
+        <label for="selectMenu"> <i>  Occupation  </i> </label>
+        <select name="ages" id="selectMenu">
+          <option value="TeenAger" id="teen">TeenAger</option>
+          <option value="Above 18" id="above8">Above 18</option>
+          <option value="Above 45" id="above45">Above 45</option>
+          <option value="Above 65" id="above65">Above 65</option>
+        </select>
+        <br />
+        <i>  Submit </i> <input type="submit" id="submitButton" onclick="passvalue()" />
+      </form>
+
+      <!-- <div class="sideImage">
+        <img src="quize_image.jpg" alt="" />
+      </div> -->
+    </div>
+
+    <script>
+      function passvalue() {
+        var username = document.getElementById("username").value;
+        var userage = document.getElementById("userage").value;
+
+        var select = document.getElementById("selectMenu");
+        var selected_value = select.options[select.selectedIndex].value;
+
+        localStorage.setItem("uname", username);
+        localStorage.setItem("uage", userage);
+        localStorage.setItem("selectedItem" , selected_value);
+      }
+    </script>
+  </body>
+</html>
